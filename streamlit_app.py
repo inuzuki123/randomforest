@@ -16,19 +16,19 @@ st.write("Vul je trade in en krijg direct Expected Value + TAKE/SKIP")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    trend_15m = st.selectbox("15m trend", [-1, 0, 1])
-    trend_1h = st.selectbox("1h trend", [-1, 0, 1])
-    trend_4h = st.selectbox("4h trend", [-1, 0, 1])
+    trend_15m = st.selectbox("15m trend", [-1, 1])
+    trend_1h = st.selectbox("1h trend", [-1, 1])
+    trend_4h = st.selectbox("4h trend", [-1, 1])
 
 with col2:
-    dtrend = st.selectbox("Daily trend", [-1, 0, 1])
-    move = st.selectbox("Move", [-1, 0, 1])
-    liquidity = st.selectbox("Liquidity", [-1, 0, 1])
+    dtrend = st.selectbox("Daily trend", [-1, 1])
+    move = st.selectbox("Move", [-1, 1])
+    liquidity = st.selectbox("Liquidity", [-1, 1])
 
 with col3:
-    fibzone = st.selectbox("Fibzone", [-1, 0, 1])
-    doubletop = st.selectbox("Double Top", [-1, 0, 1])
-    trending = st.selectbox("Trending", [-1, 0, 1])
+    fibzone = st.selectbox("Fibzone", [-1, 1])
+    doubletop = st.selectbox("Double Top", [-1, 1])
+    trending = st.selectbox("Trending", [-1, 1])
 
 # -----------------------------
 # INPUT DATAFRAME
