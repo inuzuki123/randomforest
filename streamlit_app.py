@@ -4,6 +4,7 @@ import joblib
 
 # MODEL INLADEN
 model = joblib.load("rf_model.pkl")
+reversedmodel = joblib.load("reversed_rf_model.pkl")
 
 st.title("📊 Trading Model - Setup Scorer")
 
@@ -53,13 +54,19 @@ input_data = pd.DataFrame([{
 if st.button("🚀 Predict Trade"):
 
     prediction = model.predict(input_data)[0]
+    reversedPrediction = reversedmodel.predict(input_data)[0]
 
-    st.subheader("Expected Value:")
-    st.write(round(prediction, 4))
+    st.subheader("📈 Expected Values")
+    st.write(f"Long model: {round(prediction, 4)}")
+    st.write(f"Short model: {round(reversedPrediction, 4)}")
 
-    # decision logic
-    if prediction > 0:
-        st.success("✅ TAKE TRADE")
+    st.write("---")
+
+    # beslissing
+    if prediction > reversedPrediction and prediction > 0.187:
+        st.success("✅ TAKE NORMAL")
+    elif reversedPrediction > prediction and reversedPrediction > 0.231:
+        st.success("🔻 TAKE REVERSED")
     else:
         st.error("❌ SKIP TRADE")
 
