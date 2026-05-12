@@ -63,9 +63,9 @@ if st.button("🚀 Predict Trade"):
     st.write("---")
 
     # beslissing
-    if prediction > reversedPrediction and prediction > 0.13346:
+    if prediction > reversedPrediction and prediction > 0.1534:
         st.success("✅ TAKE NORMAL")
-    elif reversedPrediction > prediction and reversedPrediction > 0.168814:
+    elif reversedPrediction > prediction and reversedPrediction > 0.1698:
         st.success("🔻 TAKE REVERSED")
     else:
         st.error("❌ SKIP TRADE")
